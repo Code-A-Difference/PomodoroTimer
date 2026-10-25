@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#9b51d0">
+  <meta name="description" content="A calm, accessible Pomodoro timer from Code A Difference. Focus on one thing, take a break, and go at your own pace.">
+  <title>Pomodoro Timer | Code A Difference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the timer</a>
+  <header class="site-header">
+    <a class="brand" href="https://codeadifference.ct.ws/"><img class="brand-logo" src="assets/logo-128.webp" width="38" height="38" alt="">Code A Difference</a>
+    <nav aria-label="Main navigation"><a href="https://codeadifference.ct.ws/#work">All tools <span aria-hidden="true">↗</span></a><a href="#how">How it works</a></nav>
+  </header>
+  <main id="main">
+    <div class="page-heading"><div><h1>A little focus.<br>A little breathing room.</h1><p>One thing at a time. A Pomodoro timer that moves at your pace.</p></div><a class="back-link" href="https://codeadifference.ct.ws/#work">← Back to the tools</a></div>
+    <div class="workspace">
+      <section class="timer-panel" aria-label="Pomodoro timer">
+        <div class="mode-picker" role="group" aria-label="Session type">
+          <button data-mode="focus" aria-pressed="true">Focus</button><button data-mode="short" aria-pressed="false">Short break</button><button data-mode="long" aria-pressed="false">Long break</button>
+        </div>
+        <p id="session-label" class="session-label">Time to focus</p>
+        <div id="clock" class="clock" role="timer" aria-label="Time remaining" aria-live="off">25:00</div>
+        <p id="timer-hint" class="timer-hint">You don’t have to finish everything. Just begin.</p>
+        <div class="progress-track" role="progressbar" aria-label="Session progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress"></div></div>
+        <div class="timer-actions"><button id="toggle" class="primary">Start focus</button><button id="reset" class="outline">Reset</button><button id="skip" class="text-button">Skip <span aria-hidden="true">→</span></button></div>
+        <div class="session-bottom"><span id="round">Focus session 1 of 4</span><span id="next">Next: 5-minute break</span></div>
+        <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+      </section>
+      <aside class="sidebar" aria-label="Your focus space">
+        <section class="intention"><h2>What’s your one thing?</h2><p>A small, specific step is a good place to start.</p><label for="task" class="sr-only">Your focus task</label><input id="task" type="text" maxlength="160" placeholder="e.g. Read the next two pages" autocomplete="off"><span class="private-note">Just for you. Saved in this browser.</span></section>
+        <section class="session-summary"><h2>One session at a time.</h2><div id="session-dots" class="session-dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div><p><strong id="completed">0</strong> focus sessions completed</p><p class="muted">After four focus sessions, take a longer break. Rest is part of the work.</p></section>
+        <details class="settings"><summary>Make it yours <span aria-hidden="true">+</span></summary><form id="settings-form"><p>Session lengths, in minutes. Saving starts the current session over.</p><div class="duration-fields"><label>Focus<input name="focus" type="number" min="1" max="120" value="25" required></label><label>Short break<input name="short" type="number" min="1" max="120" value="5" required></label><label>Long break<input name="long" type="number" min="1" max="120" value="15" required></label></div><label class="check-label"><input id="sound" type="checkbox" checked>Beep when any session ends</label><button id="test-beep" class="outline" type="button">Test beep</button><p id="sound-status" role="status"></p><button class="outline" type="submit">Save settings</button><p id="settings-status" role="status"></p></form></details>
+      </aside>
+    </div>
+    <section class="how" id="how"><h2>A rhythm, not a rule.</h2><div class="how-steps"><p><strong>Pick one thing.</strong> Choose something small enough to start. Settle in for 25 minutes of focus, or choose a length that suits you.</p><p><strong>Make room for a break.</strong> When the timer ends, step away for five minutes. Stretch, get some water, let your attention rest.</p><p><strong>Come back when you’re ready.</strong> Start the next session yourself. After four focus sessions, take a longer, 15-minute break.</p></div></section>
+    <p class="browser-note" id="storage-note">No account needed. Your task, settings and timer stay in this browser. Keep this page open to hear the sound.</p>
+    <noscript><p class="noscript">Please enable JavaScript to use the timer.</p></noscript>
+  </main>
+  <footer><a href="https://codeadifference.ct.ws/">Code A Difference</a><span>Small tools. More possibility.</span><a href="https://codeadifference.ct.ws/#feedback">Share feedback <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
